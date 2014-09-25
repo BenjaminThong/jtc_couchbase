@@ -43,7 +43,7 @@ else
     wait_for_start /opt/couchbase/bin/couchbase-cli server-add -c $COUCHBASE_PORT_8091_TCP_ADDR:$COUCHBASE_PORT_8091_TCP_PORT --user="$CLUSTER_INIT_USER" --password="$CLUSTER_INIT_PASSWORD" --server-add=$ip:8091
 fi
 
-trap "/etc/init.d/couchbase-server stop" exit INT TERM
+trap "/etc/init.d/couchbase-server stop;echo \"trapped stop\"" exit INT TERM
 
 pid_file=/opt/couchbase/var/lib/couchbase/couchbase-server.pid
 # can't use 'wait $(<"$pid_file")' as process not child of shell
