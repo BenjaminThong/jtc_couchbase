@@ -27,7 +27,8 @@ if [ -z "$CLUSTER_INIT_USER" ] || [ -z "$CLUSTER_INIT_PASSWORD" ]; then
        exit 1
 fi
 
-if [ "$CLUSTER" ]; then
+#if [ "$CLUSTER" ]; then
+if [ false ]; then
     COUCHBASE_PORT_8091_TCP=${CLUSTER##*/}
     wait_for_start /opt/couchbase/bin/couchbase-cli rebalance -c $COUCHBASE_PORT_8091_TCP:8091 --user="$CLUSTER_INIT_USER" --password="$CLUSTER_INIT_PASSWORD" --server-add=${COREOS_PRIVATE_IPV4}:8091
 else
