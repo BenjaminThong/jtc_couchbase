@@ -3,7 +3,7 @@
 #
 
 # Pull base image
-FROM ubuntu:14.04
+FROM ubuntu:12.04
 
 RUN \
   export DEBIAN_FRONTEND=noninteractive && \
