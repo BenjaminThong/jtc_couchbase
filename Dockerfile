@@ -22,7 +22,7 @@ RUN \
   sed -i 's/# \(.*multiverse$\)/\1/g' /etc/apt/sources.list && \
   apt-get update && \
   apt-get -y upgrade && \
-  apt-get -y install vim wget curl libssl1.0.0 librtmp0 python && \
+  apt-get -y install vim wget curl libssl1.0.0 librtmp0 python bridge-utils iptables && \
   wget http://packages.couchbase.com/releases/3.0.0/couchbase-server-community_3.0.0-ubuntu12.04_amd64.deb -O couchbase-server-community_3.0.0-ubuntu12.04_amd64.deb && \
   dpkg -i couchbase-server-community_3.0.0-ubuntu12.04_amd64.deb && \
   rm couchbase-server-community_3.0.0-ubuntu12.04_amd64.deb
